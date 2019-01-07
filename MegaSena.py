@@ -1,3 +1,4 @@
+#===============<<<    IMPORTS   >>>==================#
 import csv 
 import numpy as np
 
@@ -71,11 +72,11 @@ from datetime import date
 Dataatu     = date.today()
 Datatexto   = '{}.{}.{}'.format(Dataatu.day,Dataatu.month,Dataatu.year)
 #===============<<<    FIM VARIAVEIS DE TRABALHO   >>>==================#
-
 for [dez1,dez2,dez3,dez4,dez5,dez6] in arquivo:
     line_count += 1
     if (dez1 == '1') or (dez2 == '1') or (dez3 == '1') or (dez4 == '1') or (dez5 == '1') or (dez6 == '1'):
         count_num01 += 1
+        num_sorteio = dez1
     if (dez1 == '2') or (dez2 == '2') or (dez3 == '2') or (dez4 == '2') or (dez5 == '2') or (dez6 == '2'):
         count_num02 += 1        
     if (dez1 == '3') or (dez2 == '3') or (dez3 == '3') or (dez4 == '3') or (dez5 == '3') or (dez6 == '3'):
@@ -193,7 +194,8 @@ for [dez1,dez2,dez3,dez4,dez5,dez6] in arquivo:
     if (dez1 == '59') or (dez2 == '59') or (dez3 == '59') or (dez4 == '59') or (dez5 == '59') or (dez6 == '59'):
         count_num59 += 1                                                                                        
     if (dez1 == '60') or (dez2 == '60') or (dez3 == '60') or (dez4 == '60') or (dez5 == '60') or (dez6 == '60'):
-        count_num60 += 1                                                                                         
+        count_num60 += 1  
+
 print ('----------------------------------------------------------------')
 print ('-------------------<<    E X T R A T O    >>>-------------------')
 print ('----------------------------------------------------------------')
@@ -261,7 +263,118 @@ print ('NUMERO 57 SORTEADO: ', count_num57                    )
 print ('NUMERO 58 SORTEADO: ', count_num58                    )
 print ('NUMERO 59 SORTEADO: ', count_num59                    )
 print ('NUMERO 60 SORTEADO: ', count_num60                    )
-
-
-
 print ('---------------<<<   F I M   >>>---------------------') 
+numeros = [ [0,1],[1,2],[2,3],[3,4],[4,5] ,[5,6] ,[6,7] ,[7,8] ,[8,9] ,[9,10],[10,11],[11,12],[12,13],[13,14],[14,15],[15,16],[16,17],[17,18]
+,[18,19],[19,20],[20,21],[21,22],[22,23],[23,24],[24,25],[25,26],[26,27],[27,28],[28,29],[29,30],[30,31],[31,32],[32,33],[33,34],[34,35]
+,[35,36],[36,37],[37,38],[38,39],[39,40],[40,41],[41,42],[42,43],[43,44],[44,45],[45,46],[46,47],[47,48],[48,49],[49,50],[50,51],[51,52]
+,[52,53],[53,54],[54,55],[55,56],[56,57],[57,58],[58,59],[59,60]  ]
+
+numeros[0][0] = count_num01 
+numeros[1][0] = count_num02 
+numeros[2][0] = count_num03 
+numeros[3][0] = count_num04 
+numeros[4][0] = count_num05 
+numeros[5][0] = count_num06 
+numeros[6][0] = count_num07 
+numeros[7][0] = count_num08 
+numeros[8][0] = count_num09 
+numeros[9][0] = count_num10 
+numeros[10][0] = count_num11
+numeros[11][0] = count_num12
+numeros[12][0] = count_num13
+numeros[13][0] = count_num14
+numeros[14][0] = count_num15
+numeros[15][0] = count_num16
+numeros[16][0] = count_num17
+numeros[17][0] = count_num18
+numeros[18][0] = count_num19
+numeros[19][0] = count_num20
+numeros[20][0] = count_num21
+numeros[21][0] = count_num22
+numeros[22][0] = count_num23
+numeros[23][0] = count_num24
+numeros[24][0] = count_num25
+numeros[25][0] = count_num26
+numeros[26][0] = count_num27
+numeros[27][0] = count_num28
+numeros[28][0] = count_num29
+numeros[29][0] = count_num30
+numeros[30][0] = count_num31
+numeros[31][0] = count_num32
+numeros[32][0] = count_num33
+numeros[33][0] = count_num34
+numeros[34][0] = count_num35
+numeros[35][0] = count_num36
+numeros[36][0] = count_num37
+numeros[37][0] = count_num38
+numeros[38][0] = count_num39
+numeros[39][0] = count_num40
+numeros[40][0] = count_num41
+numeros[41][0] = count_num42
+numeros[42][0] = count_num43
+numeros[43][0] = count_num44
+numeros[44][0] = count_num45
+numeros[45][0] = count_num46
+numeros[46][0] = count_num47
+numeros[47][0] = count_num48
+numeros[48][0] = count_num49
+numeros[49][0] = count_num50
+numeros[50][0] = count_num51
+numeros[51][0] = count_num52
+numeros[52][0] = count_num53
+numeros[53][0] = count_num54
+numeros[54][0] = count_num55
+numeros[55][0] = count_num56
+numeros[56][0] = count_num57
+numeros[57][0] = count_num58
+numeros[58][0] = count_num59
+numeros[59][0] = count_num60
+
+          
+numeros.sort()
+print('lista ordenada: ',numeros)
+print ('-----------------------------------------------------') 
+print('NUMERO QUE MAIS SAI : ',numeros[59][1], ' e Saiu ',numeros[59][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[58][1], ' e Saiu ',numeros[58][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[57][1], ' e Saiu ',numeros[57][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[56][1], ' e Saiu ',numeros[56][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[55][1], ' e Saiu ',numeros[55][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[54][1], ' e Saiu ',numeros[54][0],'vezes!')
+print (' ') 
+print('NUMERO QUE MAIS SAI : ',numeros[53][1], ' e Saiu ',numeros[53][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[52][1], ' e Saiu ',numeros[52][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[51][1], ' e Saiu ',numeros[51][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[50][1], ' e Saiu ',numeros[50][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[49][1], ' e Saiu ',numeros[49][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[48][1], ' e Saiu ',numeros[48][0],'vezes!')
+print (' ') 
+print('NUMERO QUE MAIS SAI : ',numeros[47][1], ' e Saiu ',numeros[47][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[46][1], ' e Saiu ',numeros[46][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[45][1], ' e Saiu ',numeros[45][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[44][1], ' e Saiu ',numeros[44][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[43][1], ' e Saiu ',numeros[43][0],'vezes!')
+print('NUMERO QUE MAIS SAI : ',numeros[42][1], ' e Saiu ',numeros[42][0],'vezes!')
+print ('======================================================================= ') 
+print('NUMERO QUE MENOS SAI : ',numeros[0][1], ' e Saiu ',numeros[0][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[1][1], ' e Saiu ',numeros[1][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[2][1], ' e Saiu ',numeros[2][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[3][1], ' e Saiu ',numeros[3][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[4][1], ' e Saiu ',numeros[4][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[5][1], ' e Saiu ',numeros[5][0],'vezes!')
+print (' ') 
+print('NUMERO QUE MENOS SAI : ',numeros[6][1], ' e Saiu ',numeros[6][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[7][1], ' e Saiu ',numeros[7][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[8][1], ' e Saiu ',numeros[8][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[9][1], ' e Saiu ',numeros[9][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[10][1], ' e Saiu ',numeros[10][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[11][1], ' e Saiu ',numeros[11][0],'vezes!')
+print (' ') 
+print('NUMERO QUE MENOS SAI : ',numeros[12][1], ' e Saiu ',numeros[12][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[13][1], ' e Saiu ',numeros[13][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[14][1], ' e Saiu ',numeros[14][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[15][1], ' e Saiu ',numeros[15][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[16][1], ' e Saiu ',numeros[16][0],'vezes!')
+print('NUMERO QUE MENOS SAI : ',numeros[17][1], ' e Saiu ',numeros[17][0],'vezes!')
+print (' ') 
+
+print ('------------<<<   F I M CLASSE  >>>------------------') 
